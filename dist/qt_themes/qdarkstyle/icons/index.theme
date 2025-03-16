@@ -1,0 +1,4 @@
+[Icon Theme]
+Name=qdarkstyle
+Comment=Dark theme (Mine Shaft style)
+Inherits=default_dark

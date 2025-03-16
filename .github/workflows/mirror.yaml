@@ -1,0 +1,18 @@
+name: ♻️ Sync 🗃️
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+  schedule:
+   - cron: "0 */1 * * *"  # Every 01 Hr
+
+jobs:
+  mirror-repo:
+    uses: "pkgforge-community/repo-data/.github/workflows/sync_repos_git.yaml@main"
+    with:
+      upstream-git-repo: "https://git.suyu.dev/suyu/suyu"
+      git-checkout-tag: "LATEST_STABLE" #Specify an exact tag or specify 'LATEST_STABLE', default HEAD
+      git-fetch-depth: 1 #0 if want to fetch everything
+      git-filter-blob: true #False if want to fetch everything
