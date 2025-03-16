@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="qdarkstyle_midnight_blue">
+        <file>dark.qss</file>
+    </qresource>
+</RCC>
