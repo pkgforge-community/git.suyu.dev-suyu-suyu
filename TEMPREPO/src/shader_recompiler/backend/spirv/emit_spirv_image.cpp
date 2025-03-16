@@ -196,11 +196,8 @@ Id Texture(EmitContext& ctx, IR::TextureInstInfo info, [[maybe_unused]] const IR
 }
 
 Id TextureImage(EmitContext& ctx, IR::TextureInstInfo info, const IR::Value& index) {
-    // if (!index.IsImmediate() || index.Type() != Shader::IR::Type::U32 || index.U32() != 0) {
-    //     throw NotImplementedException("Indirect image indexing");
-    // }
-    if (index.Type() != Shader::IR::Type::U32) {
-        LOG_WARNING(Shader_SPIRV, "Non-U32 type provided as index: {}", index.Type());
+    if (!index.IsImmediate() || index.U32() != 0) {
+        throw NotImplementedException("Indirect image indexing");
     }
     if (info.type == TextureType::Buffer) {
         const TextureBufferDefinition& def{ctx.texture_buffers.at(info.descriptor_index)};
@@ -218,11 +215,8 @@ Id TextureImage(EmitContext& ctx, IR::TextureInstInfo info, const IR::Value& ind
 }
 
 std::pair<Id, bool> Image(EmitContext& ctx, const IR::Value& index, IR::TextureInstInfo info) {
-    // if (!index.IsImmediate() || index.Type() != Shader::IR::Type::U32 || index.U32() != 0) {
-    //     throw NotImplementedException("Indirect image indexing");
-    // }
-    if (index.Type() != Shader::IR::Type::U32) {
-        LOG_WARNING(Shader_SPIRV, "Non-U32 type provided as index: {}", index.Type());
+    if (!index.IsImmediate() || index.U32() != 0) {
+        throw NotImplementedException("Indirect image indexing");
     }
     if (info.type == TextureType::Buffer) {
         const ImageBufferDefinition def{ctx.image_buffers.at(info.descriptor_index)};

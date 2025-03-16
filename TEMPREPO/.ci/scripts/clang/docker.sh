@@ -7,9 +7,7 @@
 # Exit on error, rather than continuing with the rest of the script.
 set -e
 
-ccache -s
-
-git submodule update --init --recursive
+ccache -sv
 
 mkdir build || true && cd build
 cmake .. \

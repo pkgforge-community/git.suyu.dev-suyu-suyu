@@ -184,7 +184,7 @@ struct fmt::formatter<Shader::Backend::GLASM::Id> {
         return ctx.begin();
     }
     template <typename FormatContext>
-    auto format(Shader::Backend::GLASM::Id id, FormatContext& ctx) const {
+    auto format(Shader::Backend::GLASM::Id id, FormatContext& ctx) {
         return Shader::Backend::GLASM::FormatTo<true>(ctx, id);
     }
 };
@@ -195,7 +195,7 @@ struct fmt::formatter<Shader::Backend::GLASM::Register> {
         return ctx.begin();
     }
     template <typename FormatContext>
-    auto format(const Shader::Backend::GLASM::Register& value, FormatContext& ctx) const {
+    auto format(const Shader::Backend::GLASM::Register& value, FormatContext& ctx) {
         if (value.type != Shader::Backend::GLASM::Type::Register) {
             throw Shader::InvalidArgument("Register value type is not register");
         }
@@ -209,7 +209,7 @@ struct fmt::formatter<Shader::Backend::GLASM::ScalarRegister> {
         return ctx.begin();
     }
     template <typename FormatContext>
-    auto format(const Shader::Backend::GLASM::ScalarRegister& value, FormatContext& ctx) const {
+    auto format(const Shader::Backend::GLASM::ScalarRegister& value, FormatContext& ctx) {
         if (value.type != Shader::Backend::GLASM::Type::Register) {
             throw Shader::InvalidArgument("Register value type is not register");
         }
@@ -223,7 +223,7 @@ struct fmt::formatter<Shader::Backend::GLASM::ScalarU32> {
         return ctx.begin();
     }
     template <typename FormatContext>
-    auto format(const Shader::Backend::GLASM::ScalarU32& value, FormatContext& ctx) const {
+    auto format(const Shader::Backend::GLASM::ScalarU32& value, FormatContext& ctx) {
         switch (value.type) {
         case Shader::Backend::GLASM::Type::Void:
             break;
@@ -244,7 +244,7 @@ struct fmt::formatter<Shader::Backend::GLASM::ScalarS32> {
         return ctx.begin();
     }
     template <typename FormatContext>
-    auto format(const Shader::Backend::GLASM::ScalarS32& value, FormatContext& ctx) const {
+    auto format(const Shader::Backend::GLASM::ScalarS32& value, FormatContext& ctx) {
         switch (value.type) {
         case Shader::Backend::GLASM::Type::Void:
             break;
@@ -265,7 +265,7 @@ struct fmt::formatter<Shader::Backend::GLASM::ScalarF32> {
         return ctx.begin();
     }
     template <typename FormatContext>
-    auto format(const Shader::Backend::GLASM::ScalarF32& value, FormatContext& ctx) const {
+    auto format(const Shader::Backend::GLASM::ScalarF32& value, FormatContext& ctx) {
         switch (value.type) {
         case Shader::Backend::GLASM::Type::Void:
             break;
@@ -286,7 +286,7 @@ struct fmt::formatter<Shader::Backend::GLASM::ScalarF64> {
         return ctx.begin();
     }
     template <typename FormatContext>
-    auto format(const Shader::Backend::GLASM::ScalarF64& value, FormatContext& ctx) const {
+    auto format(const Shader::Backend::GLASM::ScalarF64& value, FormatContext& ctx) {
         switch (value.type) {
         case Shader::Backend::GLASM::Type::Void:
             break;

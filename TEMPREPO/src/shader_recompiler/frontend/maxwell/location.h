@@ -102,7 +102,7 @@ struct fmt::formatter<Shader::Maxwell::Location> {
         return ctx.begin();
     }
     template <typename FormatContext>
-    auto format(const Shader::Maxwell::Location& location, FormatContext& ctx) const {
+    auto format(const Shader::Maxwell::Location& location, FormatContext& ctx) {
         return fmt::format_to(ctx.out(), "{:04x}", location.Offset());
     }
 };

@@ -7,8 +7,6 @@
 export NDK_CCACHE="$(which ccache)"
 ccache -s
 
-git submodule update --init --recursive
-
 BUILD_FLAVOR="mainline"
 
 BUILD_TYPE="release"

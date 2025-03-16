@@ -250,7 +250,7 @@ struct fmt::formatter<Shader::IR::Attribute> {
         return ctx.begin();
     }
     template <typename FormatContext>
-    auto format(const Shader::IR::Attribute& attribute, FormatContext& ctx) const {
+    auto format(const Shader::IR::Attribute& attribute, FormatContext& ctx) {
         return fmt::format_to(ctx.out(), "{}", Shader::IR::NameOf(attribute));
     }
 };

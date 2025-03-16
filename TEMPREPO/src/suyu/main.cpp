@@ -9,8 +9,6 @@
 #include <memory>
 #include <thread>
 
-#include <fmt/ranges.h>
-
 #include "core/hle/service/am/applet_manager.h"
 #include "core/loader/nca.h"
 #include "core/loader/nro.h"
