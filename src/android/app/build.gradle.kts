@@ -235,7 +235,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("io.coil-kt:coil:2.2.2")
     implementation("androidx.core:core-splashscreen:1.0.1")
-    implementation("androidx.window:window:1.2.0-beta03")
+    implementation("androidx.window:window:1.5.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.4")
